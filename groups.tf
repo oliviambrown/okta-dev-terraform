@@ -9,3 +9,8 @@ resource "okta_group" "military_police" {
     description = "Personal Guards, Inner wall police"
   
 }
+
+resource "okta_group" "garrison_regiment" {
+    name = "Garrison Regiment"
+    description = "Guards and maintains walls"
+}
