@@ -19,3 +19,18 @@ resource "okta_group" "jaegerists" {
     name = "Jaegerists"
     description = "Rebel Faction"
 }
+
+resource "okta_group" "marleyan_military" {
+    name = "Marleyan Military"
+    description = "Comboed Armed forces of Marley"
+}
+
+resource "okta_group" "warriors" {
+    name = "Warriors"
+    description = "Special Marleyan Unit containing Subjects of Ymir"
+}
+
+resource "okta_group" "marley_public_security" {
+    name = "Marley Public Security"
+    description = "Maintains order in Liberio"
+}
