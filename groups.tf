@@ -14,3 +14,8 @@ resource "okta_group" "garrison_regiment" {
     name = "Garrison Regiment"
     description = "Guards and maintains walls"
 }
+
+resource "okta_group" "jaegerists" {
+    name = "Jaegerists"
+    description = "Rebel Faction"
+}
