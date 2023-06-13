@@ -10,7 +10,6 @@ That includes:
 - Learning a new skill that brings more experience. 
 
 [My Okta domain](https://dev-83329188-admin.okta.com/)
-[My Terraform Cloud instance](https://app.terraform.io/app/olivia-org/workspaces/okta-dev-terraform)
 
 [My Terraform Cloud instance](https://app.terraform.io/app/olivia-org/workspaces/okta-dev-terraform)
 
