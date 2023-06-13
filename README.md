@@ -11,8 +11,11 @@ That includes:
 
 [My Okta domain](https://dev-83329188-admin.okta.com/)
 [My Terraform Cloud instance](https://app.terraform.io/app/olivia-org/workspaces/okta-dev-terraform)
+<<<<<<< HEAD
 
 [My Terraform Cloud instance](https://app.terraform.io/app/olivia-org/workspaces/okta-dev-terraform)
+=======
+>>>>>>> 3514a48 (Updating readme)
 
 Environment based on Attack On Titan World
 
