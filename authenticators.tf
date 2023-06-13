@@ -5,8 +5,8 @@ resource "okta_authenticator" "okta_verify" {
 	{
 		userVerification = "PREFERRED"
 		channelBinding = {
-			style = "NUMBER_CHALLENGE"
-			required = "HIGH_RISK_ONLY"
+			"style" = "NUMBER_CHALLENGE"
+			"required" = "HIGH_RISK_ONLY"
 		}
 	}
 	)
