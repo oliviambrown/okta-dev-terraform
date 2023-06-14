@@ -30,6 +30,7 @@ resource "okta_policy_password" "employee_policy" {
 }
 
 resource "okta_policy_rule_password" "employee_password_policy_rule" {
+    policy_id = "${data.okta_policy.data_employee_policy.id}"
     name = "Employee Rule"
     status = "ACTIVE"
     priority = 1
@@ -39,15 +40,6 @@ resource "okta_policy_rule_password" "employee_password_policy_rule" {
     network_connection = "ANYWHERE"
 }
 
-/*resource "okta_policy_rule_password" "default_policy" {
-    password_change = "DENY"
-    password_reset = "DENY"
-    password_unlock = "DENY"
-    network_connection = "ANYWHERE"
-    users_excluded = ["${data.okta_user.olivia.id}"]
-  
-}*/
-
 data "okta_group" "jaegerists" {
     name = "Jaegerists"
 }
@@ -56,14 +48,7 @@ data "okta_group" "everyone" {
     name = "Everyone"
 }
 
-/*data "okta_user" "olivia" {
-    search {
-      name = "profile.login"
-      value = "olivia@oliviabrown.xyz"
-    }
-}*/
-
-/*data "okta_policy" "default_policy" {
-    name = "Default Policy"
+data "okta_policy" "data_employee_policy"{
+    name = "Employee Policy"
     type = "PASSWORD"
-}*/
+}
