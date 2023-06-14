@@ -56,7 +56,7 @@ data "okta_group" "everyone" {
     name = "Everyone"
 }
 
-data "okta_user" "olivia" {
+data "okta_users" "olivia" {
     name = "Olivia Brown"
 }
 
