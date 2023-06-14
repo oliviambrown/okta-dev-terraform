@@ -28,6 +28,6 @@ resource "okta_policy_password" "employee_policy" {
     #Recovery
   
 }
-data "otka_group" "jaegerists" {
+data "okta_group" "jaegerists" {
     name = "Jaegerists"
 }
