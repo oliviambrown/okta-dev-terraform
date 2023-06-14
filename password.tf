@@ -5,7 +5,7 @@ resource "okta_policy_password" "employee_policy" {
     #Inactive to see it's final form
     status = "INACTIVE"
     
-    groups_included = ["${data.okta_group.jaegerists.id}"]
+    groups_included = ["${data.okta_group.jaegerists.id}, ${data.okta_group.everyone.id}"]
 
     #Password conditions
     password_min_length = 8
@@ -30,4 +30,8 @@ resource "okta_policy_password" "employee_policy" {
 }
 data "okta_group" "jaegerists" {
     name = "Jaegerists"
+}
+
+data "okta_group" "everyone"{
+    name = "Everyone"
 }
