@@ -44,7 +44,7 @@ resource "okta_policy_rule_password" "default_policy" {
     password_reset = "DENY"
     password_unlock = "DENY"
     network_connection = "ANYWHERE"
-    users_excluded = ["${data.okta.okta_users.olivia.id}"]
+    users_excluded = ["${data.okta.okta_user.olivia.id}"]
   
 }
 
@@ -56,8 +56,11 @@ data "okta_group" "everyone" {
     name = "Everyone"
 }
 
-data "okta_users" "olivia" {
-    name = "Olivia Brown"
+data "okta_user" "olivia" {
+    search {
+      name = "profile.login"
+      value = "olivia@oliviabrown.xyz"
+    }
 }
 
 data "okta_policy" "default_policy" {
