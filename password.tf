@@ -30,6 +30,7 @@ resource "okta_policy_password" "employee_policy" {
 }
 
 resource "okta_policy_rule_password" "employee_password_policy_rule" {
+    policy_id = "${data.okta_policy_password.employee_policy.id}"
     name = "Employee Rule"
     status = "ACTIVE"
     priority = 1
