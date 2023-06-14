@@ -44,7 +44,7 @@ resource "okta_policy_rule_password" "default_policy" {
     password_reset = "DENY"
     password_unlock = "DENY"
     network_connection = "ANYWHERE"
-    users_excluded = ["${data.okta.okta_user.olivia.id}"]
+    users_excluded = ["${data.okta_user.olivia.id}"]
   
 }
 
