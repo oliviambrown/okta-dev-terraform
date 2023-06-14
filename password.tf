@@ -3,7 +3,7 @@ resource "okta_policy_password" "employee_policy" {
     description = "The basic policy, 8 characters, 1 number, 1 uppercase, 1 special"
 
     #Inactive to see it's final form
-    status = "INACTIVE"
+    status = "ACTIVE"
     
     groups_included = ["${data.okta_group.jaegerists.id}", "${data.okta_group.everyone.id}"]
 
@@ -28,10 +28,36 @@ resource "okta_policy_password" "employee_policy" {
     #Recovery
   
 }
+
+resource "okta_policy_rule_password" "employee_password_policy" {
+    name = "Employee Rule"
+    status = "ACTIVE"
+    priority = 1
+    password_change = "ALLOW"
+    password_reset = "ALLOW"
+    password_unlock = "ALLOW"
+    network_connection = "ANYWHERE"
+}
+
+resource "okta_policy_password" "deny_all_default" {
+    name = "Deny ALL"
+    status = "INACTIVE"
+    password_change = "DENY"
+    password_reset = "DENY"
+    password_unlock = "DENY"
+    network_connection = "ANYWHERE"
+    users_excluded = ["data.okta.okta_user.olivia.id"]
+  
+}
+
 data "okta_group" "jaegerists" {
     name = "Jaegerists"
 }
 
 data "okta_group" "everyone"{
     name = "Everyone"
+}
+
+data "okta_user" "olivia"{
+    name = "Olivia Brown"
 }
