@@ -14,3 +14,50 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 	}
 	)
 }
+
+#Creating resources is the exact same as in the GUI, I only need to where everything is in TF
+resource "okta_app_saml" "spacelift_saml" {
+	label = "Spacelift"
+
+	#Single sign-on URL
+	sso_url = "https://oliviambrown.app.spacelift.io/saml/acs"
+
+	#Audient URL (SP Entity ID)
+	audience = "https://oliviambrown.app.spacelift.io/saml/metadata"
+
+	#Application Username
+	subject_name_id_template = "$${user.userName}"
+
+	#Name ID format
+	subject_name_id_format = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+	
+	#Response
+	response_signed = true
+
+	#Signature Algorithim
+	signature_algorithm = "RSA_SHA256"
+
+	#Digest Algorithim
+	digest_algorithm = "SHA256"
+
+	#Each attribute needs it's own declare statement, firstName, lastName, Teams
+	attribute_statements {
+	  name = "FirstName"
+	  type = "EXPRESSION"
+	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+	  values = ["user.firstName"]
+	}
+	attribute_statements {
+	  name = "LastName"
+	  type = "EXPRESSION"
+	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+	  values = ["user.lastName"]
+	}
+	attribute_statements {
+	  name = "Teams"
+	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+	  type = "GROUP"
+	  filter_type = "REGEX"
+	  filter_value = ".*"
+	}
+}
