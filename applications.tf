@@ -17,18 +17,31 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 
 #Creating resources is the exact same as in the GUI, I only need to where everything is in TF
 resource "okta_app_saml" "spacelift_saml" {
+	#App Name*
 	label = "Spacelift"
 
-	#Single sign-on URL
+	#Logo
+	#logo = "https://raw.githubusercontent.com/oliviambrown/okta-dev-terraform/557348601ca83f4d7965bdce23a36517fe0f154e/logos/spacelift.png"
+
+	#Single sign-on URL*
 	sso_url = "https://oliviambrown.app.spacelift.io/saml/acs"
 
-	#Audient URL (SP Entity ID)
+	#Recipient*
+	recipient = "https://oliviambrown.app.spacelift.io/saml/acs"
+
+	#Destination*
+	destination = "https://oliviambrown.app.spacelift.io/saml/acs"
+
+	#Authn_context_class_ref*
+	authn_context_class_ref = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+
+	#Audience URL (SP Entity ID)*
 	audience = "https://oliviambrown.app.spacelift.io/saml/metadata"
 
-	#Application Username
+	#Application Username*
 	subject_name_id_template = "$${user.userName}"
 
-	#Name ID format
+	#Name ID format*
 	subject_name_id_format = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
 	
 	#Response
