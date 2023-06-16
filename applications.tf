@@ -21,7 +21,7 @@ resource "okta_app_saml" "spacelift_saml" {
 	label = "Spacelift"
 
 	#Logo
-	logo = "https://raw.githubusercontent.com/oliviambrown/okta-dev-terraform/557348601ca83f4d7965bdce23a36517fe0f154e/logos/spacelift.png"
+	#logo = "https://raw.githubusercontent.com/oliviambrown/okta-dev-terraform/557348601ca83f4d7965bdce23a36517fe0f154e/logos/spacelift.png"
 
 	#Single sign-on URL*
 	sso_url = "https://oliviambrown.app.spacelift.io/saml/acs"
