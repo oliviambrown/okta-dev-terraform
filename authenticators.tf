@@ -1,7 +1,7 @@
 resource "okta_authenticator" "okta_verify" {
 	key = "okta_verify"
 	name = "Okta Verify"
-	settings = jsonencode(
+	/*settings = jsonencode(
 	{
 		userVerification = "PREFERRED"
 		channelBinding = {
@@ -9,7 +9,7 @@ resource "okta_authenticator" "okta_verify" {
 			"required" = "HIGH_RISK_ONLY"
 		}
 	}
-	)
+	)*/
 }
 
 resource "okta_authenticator" "okta_email" {
