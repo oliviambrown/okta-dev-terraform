@@ -19,3 +19,11 @@ resource "okta_user" "armin" {
 	email = "armin.arlert@oliviabrown.xyz"
 
 }
+
+resource "okta_user" "erwin" {
+	first_name = "Erwin"
+	last_name = "Smith"
+	login = "erwin.smith@oliviabrown.xyz"
+	email = "erwin.smith@oliviabrown.xyz"
+  
+}
