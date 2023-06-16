@@ -20,10 +20,10 @@ resource "okta_user" "armin" {
 
 }
 
-resource "okta_user" "erwin" {
+/*resource "okta_user" "erwin" {
 	first_name = "Erwin"
 	last_name = "Smith"
 	login = "erwin.smith@oliviabrown.xyz"
 	email = "erwin.smith@oliviabrown.xyz"
   
-}
+}*/
