@@ -34,3 +34,8 @@ resource "okta_group" "marley_public_security" {
     name = "Marley Public Security"
     description = "Maintains order in Liberio"
 }
+
+resource "okta_group" "Ducks" {
+    name = "Ducks"
+    description = "The Might Ducks: we play hockey"
+}
