@@ -21,7 +21,7 @@ resource "okta_app_saml" "spacelift_saml" {
 	label = "Spacelift"
 
 	#Logo
-	logo = "https://drive.google.com/file/d/1VtZS7rPiZTqfDDhaInV0DntxirCxJrVU/view?usp=sharing"
+	logo = "./logos/spacelift.png"
 
 	#Single sign-on URL*
 	sso_url = "https://oliviambrown.app.spacelift.io/saml/acs"
