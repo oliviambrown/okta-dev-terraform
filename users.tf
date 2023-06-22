@@ -27,3 +27,10 @@ resource "okta_user" "erwin" {
 	email = "erwin.smith@oliviabrown.xyz"
   
 }
+
+resource "okta_user" "historia" {
+	first_name = "Historia"
+	last_name = "Reiss"
+	login = "historia.reiss@oliviabrown.xyz"
+	email = okta_user.historia.login
+}
