@@ -32,5 +32,5 @@ resource "okta_user" "historia" {
 	first_name = "Historia"
 	last_name = "Reiss"
 	login = "historia.reiss@oliviabrown.xyz"
-	email = okta_user.historia.login
+	email = "historia.reiss@oliviabrown.xyz"
 }
