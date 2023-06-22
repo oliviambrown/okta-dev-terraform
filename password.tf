@@ -41,7 +41,7 @@ resource "okta_policy_rule_password" "employee_password_policy_rule" {
 }
 
 data "okta_group" "jaegerists" {
-    name = "Jaegerists"
+    name = "Team-Jaegerists"
 }
 
 data "okta_group" "everyone" {
