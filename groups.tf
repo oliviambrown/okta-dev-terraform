@@ -1,41 +1,62 @@
 resource "okta_group" "survey_corps" {
-    name = "Survey Corps"
+    name = "Team-Survey Corps"
     description = "The Titan Fighters, Explorers"
   
 }
 
 resource "okta_group" "military_police" {
-    name = "Military Police"
+    name = "Team-Military Police"
     description = "Personal Guards, Inner wall police"
   
 }
 
 resource "okta_group" "garrison_regiment" {
-    name = "Garrison Regiment"
+    name = "Team-Garrison Regiment"
     description = "Guards and maintains walls"
 }
 
 resource "okta_group" "jaegerists" {
-    name = "Jaegerists"
+    name = "Team-Jaegerists"
     description = "Rebel Faction"
 }
 
 resource "okta_group" "marleyan_military" {
-    name = "Marleyan Military"
+    name = "Team-Marleyan Military"
     description = "Comboed Armed forces of Marley"
 }
 
 resource "okta_group" "warriors" {
-    name = "Warriors"
+    name = "Team-Warriors"
     description = "Special Marleyan Unit containing Subjects of Ymir"
 }
 
 resource "okta_group" "marley_public_security" {
-    name = "Marley Public Security"
+    name = "Team-Marley Public Security"
     description = "Maintains order in Liberio"
 }
 
 resource "okta_group" "Ducks" {
-    name = "Ducks"
+    name = "Team-Ducks"
     description = "The Might Ducks: we play hockey"
+}
+
+resource "okta_group" "spacelift_access" {
+    name = "App-Spacelift-access"
+    description = "Spacelift Basic Access"
+}
+
+resource "okta_group" "world_travelers" {
+    name = "Okta-World Travelers"
+    description = "Travelers who need stricter MFA policies applied"
+
+}
+
+resource "okta_group" "spacelift_project_star_access" {
+    name = "App-Spacelift-Project-Star-Access"
+    description = "Spacelift Project Star Access"
+}
+
+resource "okta_group" "spacelift_project_okta_access" {
+    name = "App-Spacelift-Project-Okta-Access"
+    description = "Spacelift Project Okta Access"
 }
