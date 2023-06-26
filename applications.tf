@@ -9,10 +9,7 @@ resource "okta_app_saml" "mongodb_atlas" {
 	#The json statement needs quotes from both key:value pair
 	app_settings_json = jsonencode(
 		{
-			"name" = "firstName"
-			"type" = "EXPRESSION"
-			"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
-			"values" = ["user.firstName"]
+			
 	})
 }
 
@@ -24,11 +21,16 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 	{
 		"acsURL" = "https://auth.mongodb.com/sso/saml2/0oajh4dwibKWjlyIX297"
 		"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
-
+		
+		"attributeStatements" = [{
+			"name" = "firstName"
+			"type" = "EXPRESSION"
+			"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+			"values" = ["user.firstName"]
+			}]
+		
 	}
 	)
-	
-
 }
 
 #Creating resources is the exact same as in the GUI, I only need to know where everything is in TF
@@ -77,7 +79,7 @@ resource "okta_app_saml" "spacelift_saml" {
 	  values = ["user.firstName"]
 	}
 	
-	#Attribute_statments only works with okta_app_saml
+	#Attribute_statments only works with okta_app_saml, a shortcut
 	attribute_statements {
 	  name = "LastName"
 	  type = "EXPRESSION"
