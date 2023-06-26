@@ -18,18 +18,29 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 	
 	#Used when using okta_app_saml_app_settings
 	settings = jsonencode(
-	{
-		"acsURL" = "https://auth.mongodb.com/sso/saml2/0oajh4dwibKWjlyIX297"
-		"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
+		{
+			"acsURL" = "https://auth.mongodb.com/sso/saml2/0oajh4dwibKWjlyIX297"
+			"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
+			
+			#Not sure if it's because it's preconfigured. I will try groups instead
+			"attributeStatements" = [ 
+				{
+					"name" = "memberOf"
+					"type" = "GROUP"
+					"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+					"filterType" = "REGEX"
+					"filterValue" = ".*"
+				}
+				
+				/*{
+					"name" = "firstName"
+					"type" = "EXPRESSION"
+					"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+					"values" = ["user.firstName"]
+				}*/
+			]
 		
-		"attributeStatements" = [{
-			"name" = "firstName"
-			"type" = "EXPRESSION"
-			"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
-			"values" = ["user.firstName"]
-			}]
-		
-	}
+		}
 	)
 }
 
@@ -79,7 +90,7 @@ resource "okta_app_saml" "spacelift_saml" {
 	  values = ["user.firstName"]
 	}
 	
-	#Attribute_statments only works with okta_app_saml, a shortcut
+	#Attribute_statments only works with okta_app_saml, a terraform shortcut
 	attribute_statements {
 	  name = "LastName"
 	  type = "EXPRESSION"
