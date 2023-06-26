@@ -4,18 +4,43 @@ resource "okta_app_saml" "mongodb_atlas" {
 	saml_version = "2.0"
 	status = "ACTIVE"
 
+	app_settings_json = jsonencode(
+		{
+			"acsURL" = "https://auth.mongodb.com/sso/saml2/0oajh4dwibKWjlyIX297"
+			"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
+		}
+	)
+
 	#app_settings_json used with okta_app_saml
 	#Testing multiple ways to add statemnts in resources
 	#The json statement needs quotes from both key:value pair
+	
+	#attribute statements are better for some reason
 	attribute_statements {
     type         = "GROUP"
-    name         = "groups"
+    name         = "memberOf"
     filter_type  = "REGEX"
     filter_value = ".*"
+
+	attribute_statements {
+	  name = "firstName"
+	  type = "EXPRESSION"
+	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+	  values = ["user.firstName"]
+	}
+	
+	#Attribute_statments only works with okta_app_saml, a terraform shortcut
+	attribute_statements {
+	  name = "lastName"
+	  type = "EXPRESSION"
+	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+	  values = ["user.lastName"]
+	}
   }
 }
 
-resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
+#More of an exercise but I want to test again, adding attributes directly with API or attr statements with this resource
+/*resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 	app_id = okta_app_saml.mongodb_atlas.id
 	
 	#Used when using okta_app_saml_app_settings
@@ -25,6 +50,7 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 			"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
 			
 			#Not sure if it's because it's preconfigured. I will try groups instead
+			#Why can't this way work isntead? It's how it's ordered. I have to add the higher levels
 			"attributeStatements" = [ 
 				{
 					"name" = "memberOf"
@@ -34,17 +60,17 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 					"filterValue" = ".*"
 				}
 				
-				/*{
+				{
 					"name" = "firstName"
 					"type" = "EXPRESSION"
 					"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
 					"values" = ["user.firstName"]
-				}*/
+				}
 			]
 		
 		}
 	)
-}
+}*/
 
 #Creating resources is the exact same as in the GUI, I only need to know where everything is in TF
 resource "okta_app_saml" "spacelift_saml" {
