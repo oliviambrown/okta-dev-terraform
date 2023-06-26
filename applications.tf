@@ -19,8 +19,8 @@ resource "okta_app_saml" "mongodb_atlas" {
 	attribute_statements {
     type         = "GROUP"
     name         = "memberOf"
-    filter_type  = "REGEX"
-    filter_value = ".*"
+    filter_type  = "STARTS_WITH"
+    filter_value = "App-Atlas-"
 	} 
 }
 
