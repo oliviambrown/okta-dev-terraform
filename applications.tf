@@ -21,23 +21,7 @@ resource "okta_app_saml" "mongodb_atlas" {
     name         = "memberOf"
     filter_type  = "REGEX"
     filter_value = ".*"
-	}
-
-	attribute_statements {
-	  name = "firstName"
-	  type = "EXPRESSION"
-	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
-	  values = ["user.firstName"]
-	}
-	
-	#Attribute_statments only works with okta_app_saml, a terraform shortcut
-	attribute_statements {
-	  name = "lastName"
-	  type = "EXPRESSION"
-	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
-	  values = ["user.lastName"]
-	}
-  
+	} 
 }
 
 #More of an exercise but I want to test again, adding attributes directly with API or attr statements with this resource
