@@ -7,10 +7,12 @@ resource "okta_app_saml" "mongodb_atlas" {
 	#app_settings_json used with okta_app_saml
 	#Testing multiple ways to add statemnts in resources
 	#The json statement needs quotes from both key:value pair
-	app_settings_json = jsonencode(
-		{
-			
-	})
+	attribute_statements {
+    type         = "GROUP"
+    name         = "groups"
+    filter_type  = "REGEX"
+    filter_value = ".*"
+  }
 }
 
 resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
