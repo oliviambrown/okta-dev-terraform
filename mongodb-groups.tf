@@ -28,3 +28,8 @@ resource "okta_group" "mongodb_member" {
     name = "App-Atlas-Member"
     description = "MongoDB Atlas Org Member Role"
 }
+
+resource "okta_group" "mongodb_access" {
+    name = "App-Atlas-Access"
+    description = "MongoDB Atlas Application Assignment/Access"
+}
