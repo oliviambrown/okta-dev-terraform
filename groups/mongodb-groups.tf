@@ -7,7 +7,6 @@ resource "okta_group" "mongodb_billing_viewer" {
     name = "App-Atlas-Billing Viewer"
     description = "MongoDB Atlas Org Billing Viewer Role"
 }
-
 resource "okta_group" "mongodb_owner" {
     name = "App-Atlas-Owner"
     description = "MongoDB Atlas Org Owner Role"
@@ -22,7 +21,7 @@ resource "okta_group" "mongodb_billing_admin" {
 }
 resource "okta_group" "mongodb_read_only" {
     name = "App-Atlas-Read Only"
-    description = "MongoDB Atlas Org Readonly Role"
+    description = "MongoDB Atlas Org Read only Role"
 }
 
 resource "okta_group" "mongodb_member" {

@@ -47,7 +47,7 @@ resource "okta_group" "spacelift_access" {
 
 resource "okta_group" "world_travelers" {
     name = "Okta-World Travelers"
-    description = "Travelers who need stricter MFA policies applied"
+    description = "Travelers who need stricter MFA policies applied."
 
 }
 

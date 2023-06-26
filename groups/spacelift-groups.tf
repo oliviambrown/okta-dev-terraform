@@ -5,5 +5,5 @@ resource "okta_group" "spacelift_project_star_access" {
 
 resource "okta_group" "spacelift_project_okta_access" {
     name = "App-Spacelift-Project-Okta-Access"
-    description = "Spacelift Project Okta Access"
+    description = "Spacelift Project Okta Acces."
 }
