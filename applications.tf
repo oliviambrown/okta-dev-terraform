@@ -3,22 +3,31 @@ resource "okta_app_saml" "mongodb_atlas" {
 	preconfigured_app = "mongodbcloudmanager"
 	saml_version = "2.0"
 	status = "ACTIVE"
+
+	#app_settings_json used with okta_app_saml
+	#Testing multiple ways to add statemnts in resources
+	#The json statement needs quotes from both key:value pair
+	app_settings_json = jsonencode(
+		{
+			"name" = "firstName"
+			"type" = "EXPRESSION"
+			"namespace" = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+			"values" = ["user.firstName"]
+	})
 }
 
 resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 	app_id = okta_app_saml.mongodb_atlas.id
+	
+	#Used when using okta_app_saml_app_settings
 	settings = jsonencode(
 	{
 		"acsURL" = "https://auth.mongodb.com/sso/saml2/0oajh4dwibKWjlyIX297"
 		"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
+
 	}
 	)
-	attribute_statements {
-		name = "firstName"
-		type = "EXPRESSION"
-		namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
-		values = ["user.firstName"]
-	}
+	
 
 }
 
@@ -67,6 +76,8 @@ resource "okta_app_saml" "spacelift_saml" {
 	  namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
 	  values = ["user.firstName"]
 	}
+	
+	#Attribute_statments only works with okta_app_saml
 	attribute_statements {
 	  name = "LastName"
 	  type = "EXPRESSION"
