@@ -5,7 +5,7 @@ resource "okta_policy_password" "employee_policy" {
     #Inactive to see it's final form
     status = "ACTIVE"
     
-    #groups_included = ["${data.okta_group.everyone.id}"]
+    groups_included = ["${data.okta_group.jaegerists.id}", "${data.okta_group.everyone.id}"]
 
     #Password conditions
     password_min_length = 8
@@ -40,13 +40,13 @@ resource "okta_policy_rule_password" "employee_password_policy_rule" {
     network_connection = "ANYWHERE"
 }
 
-/*data "okta_group" "jaegerists" {
+data "okta_group" "jaegerists" {
     name = "Team-Jaegerists"
-}*/
+}
 
-/*data "okta_group" "everyone" {
+data "okta_group" "everyone" {
     name = "Everyone"
-}*/
+}
 
 data "okta_policy" "data_employee_policy"{
     name = "Employee Policy"
