@@ -22,7 +22,7 @@ resource "okta_group" "jaegerists" {
 
 resource "okta_group" "marleyan_military" {
     name = "Team-Marleyan Military"
-    description = "Comboed armed forces of Marley"
+    description = "Comboed armed forces of Marley "
 }
 
 resource "okta_group" "warriors" {
