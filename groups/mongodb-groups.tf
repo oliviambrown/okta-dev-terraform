@@ -21,7 +21,7 @@ resource "okta_group" "mongodb_billing_admin" {
 }
 resource "okta_group" "mongodb_read_only" {
     name = "App-Atlas-Read Only"
-    description = "MongoDB Atlas Org Read only Role"
+    description = "MongoDB Atlas Org Read Only Role"
 }
 
 resource "okta_group" "mongodb_member" {

@@ -3,5 +3,6 @@ resource "okta_group_memberships" "ducks_membership" {
     users = [ 
         okta_user.armin.id,
         okta_user.mikasa.id
+        
     ]
 }
