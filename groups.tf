@@ -60,3 +60,9 @@ resource "okta_group" "spacelift_project_okta_access" {
     name = "App-Spacelift-Project-Okta-Access"
     description = "Spacelift Project Okta Access"
 }
+
+resource "okta_group" "mongodb_member_project_0" {
+    name = "App-Atlas-Member-Project 0-Read Only"
+    description = "MongoDB Atlas Project 0 Readonly access" 
+  
+}
