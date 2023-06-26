@@ -13,9 +13,16 @@ resource "okta_app_saml_app_settings" "mongodb_atlas_app_settings" {
 		"audienceURI" = "https://www.okta.com/saml2/service-provider/spkkjmwtynyziasqpvwp"
 	}
 	)
+	attribute_statements {
+		name = "firstName"
+		type = "EXPRESSION"
+		namespace = "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"
+		values = ["user.firstName"]
+	}
+
 }
 
-#Creating resources is the exact same as in the GUI, I only need to where everything is in TF
+#Creating resources is the exact same as in the GUI, I only need to know where everything is in TF
 resource "okta_app_saml" "spacelift_saml" {
 	#App Name*
 	label = "Spacelift"
