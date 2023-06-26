@@ -1,7 +1,6 @@
 resource "okta_group" "mongodb_member_project_0" {
     name = "App-Atlas-Member-Project 0-Read Only"
     description = "MongoDB Atlas Member Project 0 Readonly access" 
-  
 }
 
 resource "okta_group" "mongodb_billing_viewer" {
