@@ -1,7 +1,7 @@
-variable "org_name" {}
-variable "base_url" {}
-variable "client_id" {}
-variable "scopes" {}
+variable "TF_VAR_org_name" {}
+variable "TF_VAR_base_url" {}
+variable "TF_VAR_client_id" {}
+variable "TF_VAR_scopes" {}
 
 # Enable and configure the Okta provider
 #Adding to trigger
@@ -15,10 +15,10 @@ terraform {
 }
 
 provider "okta" {
-    org_name = var.org_name
-    base_url = var.base_url
-    client_id = var.client_id
-    scopes = var.scopes
+    org_name = var.TF_VAR_org_name
+    base_url = var.TF_VAR_base_url
+    client_id = var.TF_VAR_client_id
+    scopes = var.TF_VAR_scopes
     private_key = "${path.module}/rsa.pem"
 }
 
