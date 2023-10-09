@@ -22,10 +22,10 @@ resource "okta_authenticator" "okta_password" {
 	name = "Okta Password"
 }
 
-resource "okta_authenticator" "phone_number" {
+/*resource "okta_authenticator" "phone_number" {
 	key = "phone_number"
 	name = "Phone Number"
-}
+}*/
 
 resource "okta_authenticator" "webauthn" {
 	key = "webauthn"
