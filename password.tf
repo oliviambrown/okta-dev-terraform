@@ -29,7 +29,7 @@ resource "okta_policy_password" "employee_policy" {
   
 }
 
-resource "okta_policy_rule_password" "employee_password_policy_rule" {
+/*resource "okta_policy_rule_password" "employee_password_policy_rule" {
     policy_id = "${data.okta_policy.data_employee_policy.id}"
     name = "Employee Rule"
     status = "ACTIVE"
@@ -38,7 +38,7 @@ resource "okta_policy_rule_password" "employee_password_policy_rule" {
     password_reset = "ALLOW"
     password_unlock = "ALLOW"
     network_connection = "ANYWHERE"
-}
+}*/
 
 /*data "okta_group" "jaegerists" {
     name = "Team-Jaegerists"
