@@ -2,7 +2,6 @@ variable "org_name" {}
 variable "base_url" {}
 variable "client_id" {}
 variable "scopes" {}
-
 # Enable and configure the Okta provider
 #Adding to trigger
 terraform {
