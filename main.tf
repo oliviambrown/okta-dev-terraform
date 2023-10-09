@@ -18,7 +18,7 @@ provider "okta" {
     org_name = var.org_name
     base_url = var.base_url
     client_id = var.client_id
-    scopes = var.scopes
+    scopes = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage"]
     private_key = "${path.module}/rsa.pem"
 }
 
