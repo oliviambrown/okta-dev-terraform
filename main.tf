@@ -19,6 +19,6 @@ provider "okta" {
     base_url = var.base_url
     client_id = var.client_id
     scopes = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage", "okta.groups.read","okta.policies.read", "okta.users.read", "okta.apps.read", "okta.authenticators.manage", "okta.authenticators.read"]
-    private_key = "${path.module}/rsa.pem"
+    private_key = "/mnt/workspace/rsa.pem"
 }
 
