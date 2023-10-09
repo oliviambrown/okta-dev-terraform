@@ -1,4 +1,4 @@
-resource "okta_policy_password" "employee_policy" {
+/*resource "okta_policy_password" "employee_policy" {
     name = "Employee Policy"
     description = "The basic policy, 8 characters, 1 number, 1 uppercase, 1 special"
 
@@ -27,7 +27,7 @@ resource "okta_policy_password" "employee_policy" {
 
     #Recovery
   
-}
+}*/
 
 /*resource "okta_policy_rule_password" "employee_password_policy_rule" {
     policy_id = "${data.okta_policy.data_employee_policy.id}"
