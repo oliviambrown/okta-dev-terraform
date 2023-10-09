@@ -48,7 +48,7 @@ data "okta_group" "everyone" {
     name = "Everyone"
 }
 
-data "okta_policy" "data_employee_policy"{
+/*data "okta_policy" "data_employee_policy"{
     name = "Employee Policy"
     type = "PASSWORD"
-}
+}*/
