@@ -4,6 +4,7 @@ variable "client_id" {}
 variable "scopes" {}
 
 # Enable and configure the Okta provider
+#Adding to trigger
 terraform {
   required_providers {
     okta = {
