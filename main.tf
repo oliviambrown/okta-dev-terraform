@@ -1,7 +1,7 @@
-#variable "TF_VAR_org_name" {}
-#variable "TF_VAR_base_url" {}
-#variable "TF_VAR_client_id" {}
-#variable "TF_VAR_scopes" {}
+variable "TF_VAR_org_name" {}
+variable "TF_VAR_base_url" {}
+variable "TF_VAR_client_id" {}
+variable "TF_VAR_scopes" {}
 
 # Enable and configure the Okta provider
 #Adding to trigger
