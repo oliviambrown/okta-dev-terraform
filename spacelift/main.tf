@@ -15,7 +15,4 @@ provider "okta" {
     private_key = "/mnt/workspace/rsa.pem"
 }
 
-/*resource "okta_group" "spacelift-group" {
-  name = "spacelift-group"
-  description = "${var.terraform-warning}"
-}*/
+
