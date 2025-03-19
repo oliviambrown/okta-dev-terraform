@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    okta = {
-      source  = "okta/okta"
-      version = "~> 4.0"
-    }
-  }
-}
-
 provider "okta" {
     org_name = var.org_name
     base_url = var.base_url
@@ -15,7 +6,7 @@ provider "okta" {
     private_key = "/mnt/workspace/rsa.pem"
 }
 
-resource "okta_group" "spacelift" {
+resource "okta_group" "spacelift-group" {
   name = "spacelift-group"
   description = "${var.terraform-warning}"
 }
