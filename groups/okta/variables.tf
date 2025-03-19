@@ -2,7 +2,6 @@ variable "terraform-warning" {
     description = "Warn"
     type = string
     default = "Managed by Terraform"
-  
 }
 
 variable "base_url" {
