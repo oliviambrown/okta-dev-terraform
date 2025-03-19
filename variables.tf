@@ -25,14 +25,6 @@ variable "scopes" {
     default = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage"]
   
 }
-
-/*variable "private_key" {
-    description = "Either the path to the private key file, stored locally in folder"
-    type = string
-    sensitive = true
-    default = "/mnt/workspace/rsa.pem"
-  
-}*/
 variable "terraform-warning" {
     description = "Warn"
     type = string
