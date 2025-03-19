@@ -1,3 +1,10 @@
+variable "terraform-warning" {
+    description = "Warn"
+    type = string
+    default = "Managed by Terraform"
+  
+}
+
 variable "base_url" {
     description = "The okta URL, can only be okta.com or oktapreview.com"
     type = string
@@ -23,19 +30,5 @@ variable "scopes" {
     description = "Authorizing which scopes terraform can call the Okta API"
     type = list(string)
     default = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage"]
-  
-}
-
-/*variable "private_key" {
-    description = "Either the path to the private key file, stored locally in folder"
-    type = string
-    sensitive = true
-    default = "/mnt/workspace/rsa.pem"
-  
-}*/
-variable "terraform-warning" {
-    description = "Warn"
-    type = string
-    default = "Managed by Terraform"
   
 }
