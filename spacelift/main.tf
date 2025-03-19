@@ -16,6 +16,6 @@ provider "okta" {
 }
 
 resource "okta_group" "spacelift" {
-  name = "spacelift"
+  name = "spacelift-group"
   description = "${var.terraform-warning}"
 }
