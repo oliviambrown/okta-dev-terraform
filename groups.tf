@@ -1,4 +1,4 @@
 resource "okta_group" "refresh" {
-  name = "Refresh group"
+  name = "Refreshing-group"
   description = "Reintroducing myself to TF"
 }
