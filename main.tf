@@ -14,3 +14,15 @@ provider "okta" {
     scopes = var.scopes
     private_key = "/mnt/workspace/rsa.pem"
 }
+
+resource "okta-group" "spacelift-group" {
+  name = "spacelift-group"
+  description = "${var.terraform-warning}"
+  
+}
+
+resource "okta-group" "okta-group" {
+  name = "okta-group"
+  description = "${var.terraform-warning}"
+  
+}
