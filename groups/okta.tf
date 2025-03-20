@@ -14,3 +14,9 @@ provider "okta" {
     scopes = var.scopes
     private_key = "/mnt/workspace/rsa.pem"
 }
+
+resource "okta_group" "okta-group" {
+  name = "okta-group"
+  description = "${var.terraform-warning}"
+  
+}
