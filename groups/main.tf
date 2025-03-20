@@ -16,7 +16,7 @@ provider "okta" {
 }
 
 resource "okta_group" "okta-group" {
-  name = "okta-group"
+  name = "okta-group-er"
   description = "${var.terraform-warning}"
   
 }
