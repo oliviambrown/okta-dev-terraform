@@ -15,5 +15,13 @@ provider "okta" {
     private_key = "/mnt/workspace/rsa.pem"
 }
 
+resource "okta_user" "terraform-service" {
+  first_name = "Terraform"
+  last_name = "Service"
+  email = "tf-service@oliviabrown.xyz"
+  login = "tf-service@oliviabrown.xyz"
+  
+}
+
 
 
