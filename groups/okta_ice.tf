@@ -5,7 +5,7 @@ resource "okta_app_bookmark" "okta_ice" {
 }
 resource "okta_app_user" "okta-ice-olivia" {
     app_id = okta_app_bookmark.okta_ice.id
-    user_id = data.okta_user.olivia.id
+    user_id = data.okta_user.hisu.id
   
 }
 
