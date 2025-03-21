@@ -9,9 +9,3 @@ resource "okta_app_user" "okta-ice-olivia" {
   
 }
 
-data "okta_user" "olivia" {
-    search {
-      name = "profile.login"
-      value = "olivia@oliviabrown.xyz"
-    }
-}
