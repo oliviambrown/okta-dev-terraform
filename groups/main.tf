@@ -21,5 +21,9 @@ resource "okta_app_bookmark" "okta_ice" {
   
 }
 
+data "okta_app" "ice_data" {
+  id = okta_app_bookmark.okta_ice.id
+}
+
 
 
