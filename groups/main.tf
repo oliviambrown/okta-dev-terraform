@@ -24,6 +24,11 @@ resource "okta_app_bookmark" "okta_ice" {
 data "okta_app" "ice_data" {
   id = okta_app_bookmark.okta_ice.id
 }
+data "okta_user" "olivia_data" {
+  search {
+    expression = "profile.firstName eq \"Olivia\""
+  }
+}
 
 
 
