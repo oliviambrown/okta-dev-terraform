@@ -21,5 +21,12 @@ resource "okta_app_bookmark" "okta_ice" {
   
 }
 
+data "okta_user" "olivia" {
+  search {
+    name = "profile.login"
+    value = "olivia@oliviabrown.xyz"
+  }
+  
+}
 
 
