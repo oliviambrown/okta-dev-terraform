@@ -39,12 +39,18 @@ data "okta_user" "hisu" {
   
 }
 
-resource "okta_app_user" "okta-ice-olivia" {
+resource "okta_app_user" "okta-ice-hisu" {
     app_id = okta_app_bookmark.okta_ice.id
     username = data.okta_user.hisu.login
     user_id = data.okta_user.hisu.id
   
 }
 
+resource "okta_app_user" "okta-ice-olivia" {
+    app_id = okta_app_bookmark.okta_ice.id
+    username = data.okta_user.olivia
+    user_id = data.okta_user.olivia
+  
+}
 
 
