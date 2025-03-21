@@ -12,7 +12,7 @@ provider "okta" {
     base_url = var.base_url
     client_id = var.client_id
     scopes = var.scopes
-    private_key = "/mnt/workspace/rsa.pem"
+    private_key = "/mnt/workspace/pcks.pem"
 }
 
 
