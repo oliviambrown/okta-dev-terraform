@@ -15,9 +15,10 @@ provider "okta" {
     private_key = "/mnt/workspace/rsa.pem"
 }
 
-data "okta_user" "olivia" {
-    search {
-      name = "profile.login"
-      value = "olivia@oliviabrown.xyz"
-    }
+data "okta_user" "hisu" {
+  search {
+    name = "profile.login"
+    value = "historia.reiss@oliviabrown.xyz"
+  }
+  
 }
