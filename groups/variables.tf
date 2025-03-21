@@ -28,6 +28,6 @@ variable "client_id" {
 variable "scopes" {
     description = "Authorizing which scopes terraform can call the Okta API"
     type = list(string)
-    default = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage", "okta.users.read"]
+    default = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage", "okta.users.read", "okta.groups.read"]
   
 }
