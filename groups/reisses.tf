@@ -8,6 +8,6 @@ resource "okta_group_rule" "reiss_group_rule" {
   status = "ACTIVE"
   group_assignments = [okta_group.reiss_okta_group.id]
   expression_type = "urn:okta:expression:1.0"
-  expression_value = "String.stringContains(user.lastName, \"reiss\")"
+  expression_value = "String.stringContains(user.login, \"reiss\")"
 
 }
