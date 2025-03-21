@@ -14,3 +14,10 @@ provider "okta" {
     scopes = var.scopes
     private_key = "/mnt/workspace/rsa.pem"
 }
+
+data "okta_user" "olivia" {
+    search {
+      name = "profile.login"
+      value = "olivia@oliviabrown.xyz"
+    }
+}
