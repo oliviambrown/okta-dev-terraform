@@ -14,9 +14,4 @@ resource "okta_app_oauth" "spacelift" {
   
 }
 
-resource "okta_app_user" "spacelift-olivia" {
-    app_id = okta_app_oauth.spacelift.id
-    username = data.okta_user.olivia.login
-    user_id = data.okta_user.olivia.id
-  
-}
+
