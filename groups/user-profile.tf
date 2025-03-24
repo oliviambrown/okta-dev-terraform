@@ -1,21 +1,18 @@
-resource "okta_user_schema_property" "okta_user_test" {
-  index = "tfProp"
-  title = "Terraform"
-  type = "string"
-  enum = ["alpha", "beta", "charlie", "delta"]
-  description = "Property managed by TF"
-  master = "OKTA"
-  permissions = "READ_WRITE"
-
-}
-
 resource "okta_user_schema_property" "okta_user_schema_custom" {
     index = "customProperty"
     title = "custom"
-    type = "array"
+    type = "string"
     description = "${var.terraform-warning}"
     master = "OKTA"
     permissions = "READ_WRITE"
 
-    array_enum = ["a", "b", "c", "d"]
+    enum = ["a", "b"]
+    one_of {
+      const = "a"
+      title = "aye"
+    }
+    one_of {
+      const = "b"
+      title = "bee"
+    }
 }
