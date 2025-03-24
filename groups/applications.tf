@@ -1,6 +1,7 @@
 resource "okta_app_oauth" "spacelift" {
     label = "Spacelift"
     type = "web"
+    redirect_uris  = ["https://oliviamariebrown.app.spacelift.io/oidc/exchange"]
 }
 
 import {
