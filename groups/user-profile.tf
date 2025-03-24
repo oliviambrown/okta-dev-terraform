@@ -9,3 +9,13 @@ resource "okta_user_schema_property" "okta_user_test" {
 
 }
 
+resource "okta_user_schema_property" "okta_user_schema_custom" {
+    index = "customProperty"
+    title = "custom"
+    type = "array"
+    description = "${var.terraform-warning}"
+    master = "OKTA"
+    permissions = "READ_WRITE"
+
+    array_enum = ["a", "b", "c", "d"]
+}
