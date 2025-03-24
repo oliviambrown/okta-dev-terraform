@@ -8,13 +8,3 @@ resource "okta_user_schema_property" "okta_user_test" {
   permissions = "READ_WRITE"
 
 }
-
-resource "okta_user_schema_property" "okta_user_array_enum" {
-   index = "arrayEnumTest"
-   title = "arrayEnum"
-   type = "array"
-   description = "${var.terraform-warning}"
-   array_enum = ["a", "b", "c", "d"]
-   master = "OKTA" 
-  
-}
