@@ -25,7 +25,7 @@ resource "okta_user_schema_property" "okta_user_schema_military" {
     master = "OKTA"
     permissions = "READ_ONLY"
 
-    enum = ["scouts", "garrison", "militiary_police"]
+    enum = ["scouts", "garrison", "military_police"]
     one_of {
       const = "scouts"
       title = "Survey Corps"
