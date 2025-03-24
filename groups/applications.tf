@@ -22,7 +22,6 @@ resource "okta_app_user" "spacelift-olivia" {
 }
 
 resource "okta_app_saml" "mongodb" {
-    id = "0oach7ofrr0y1QkcM5d7"
     label = "MongoDB Atlas"
     preconfigured_app = "mongodbcloudmanager"
     saml_version = "2.0"
