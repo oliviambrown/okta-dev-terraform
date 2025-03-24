@@ -37,6 +37,3 @@ resource "okta_app_saml" "mongodb" {
         values = []
   }
 }
-
-
-
