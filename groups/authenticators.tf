@@ -9,3 +9,30 @@ resource "okta_authenticator" "google" {
   name = "Google Authenticator"
   status = "ACTIVE"
 }
+
+resource "okta_authenticator" "verify" {
+    key = "okta_verify"
+    name = "Okta Verify"
+    status = "ACTIVE"
+  
+}
+
+resource "okta_authenticator" "password" {
+    key = "okta_password"
+    name = "Password"
+    status = "ACTIVE"
+}
+
+resource "okta_authenticator" "webautn" {
+    key = "webauthn"
+    name = "FIDO2 (WebAuthn)"
+    status = "ACTIVE"
+  
+}
+
+resource "okta_authenticator" "sec_question" {
+    key = "security_question"
+    name = "Security Question"
+    status = "ACTIVE"
+  
+}
