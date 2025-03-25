@@ -6,6 +6,5 @@ resource "okta_authenticator" "google" {
 resource "okta_authenticator" "email" {
   name = "Email"
   key = "okta_email"
-  status = "INACTIVE"
+  status = "ACTIVE"
 }
-
