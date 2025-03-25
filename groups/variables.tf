@@ -31,3 +31,10 @@ variable "scopes" {
     default = ["okta.groups.manage", "okta.users.manage", "okta.policies.manage", "okta.apps.manage", "okta.roles.manage", "okta.schemas.manage", "okta.authenticators.manage"]
   
 }
+
+variable "password_match" {
+    description = "Ensures the AD and Okta pass policies match"
+    type = string
+    default = "placeholder"
+  
+}
