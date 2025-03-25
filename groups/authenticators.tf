@@ -1,3 +1,10 @@
+/*Authenticators are different, 
+Undefining the resource only removes the Terraform management
+It doesn't destroy the resource for good reason.
+Preventative.
+
+*/
+
 resource "okta_authenticator" "email" {
   name = "Email"
   key = "okta_email"
@@ -10,7 +17,12 @@ resource "okta_authenticator" "google" {
   status = "ACTIVE"
 }
 
-
+resource "okta_authenticator" "verify" {
+    key = "okta_verify"
+    name = "Okta Verify"
+    status = "ACTIVE"
+  
+}
 
 resource "okta_authenticator" "password" {
     key = "okta_password"
