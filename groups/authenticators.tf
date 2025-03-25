@@ -1,4 +1,4 @@
-/*Authenticators are different, 
+/*Authenticators are different. 
 Undefining the resource only removes the Terraform management
 It doesn't destroy the resource for good reason.
 Preventative.
