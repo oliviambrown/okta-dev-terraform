@@ -3,3 +3,9 @@ resource "okta_authenticator" "email" {
   key = "okta_email"
   status = "ACTIVE"
 }
+
+resource "okta_authenticator" "google" {
+  key = "google_otp"
+  name = "Google Authenticator"
+  status = "ACTIVE"
+}
