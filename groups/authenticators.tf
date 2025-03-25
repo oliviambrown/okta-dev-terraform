@@ -13,7 +13,7 @@ resource "okta_authenticator" "google" {
 resource "okta_authenticator" "verify" {
     key = "okta_verify"
     name = "Okta Verify"
-    status = "ACTIVE"
+    status = "INACTIVE"
   
 }
 
