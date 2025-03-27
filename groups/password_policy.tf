@@ -8,7 +8,8 @@ resource "okta_policy_password_default" "default_pw" {
 
 resource "okta_policy_password" "ad_pw" {
     name = "TF-managed Active Directory Policy"
-    status = "INACTIVE"
+    description = "${var.terraform-warning}"
+    status = "ACTIVE"
     auth_provider = "ACTIVE_DIRECTORY"
     password_min_length = 9
     password_exclude_username = true
@@ -16,4 +17,9 @@ resource "okta_policy_password" "ad_pw" {
     password_history_count = 5
     password_max_lockout_attempts = 11
     groups_included = ["${data.okta_group.everyone.id}"] 
+}
+
+resource "okta_policy_rule_password" "ad_pw_policy_rule" {
+    name = "Active Directory Policy Rule"
+  
 }
