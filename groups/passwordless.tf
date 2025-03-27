@@ -17,5 +17,4 @@ resource "okta_app_signon_policy_rule" "passless_auth_policy" {
     groups_included = ["${okta_group.passless_group.id}"]
     status = "INACTIVE"
     factor_mode = "2FA"
-  
 }
