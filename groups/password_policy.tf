@@ -7,12 +7,13 @@ resource "okta_policy_password_default" "default_pw" {
 }
 
 resource "okta_policy_password" "ad_pw" {
-    name = "Active Directory Policy"
+    name = "TF-managed Active Directory Policy"
+    status = "INACTIVE"
     auth_provider = "ACTIVE_DIRECTORY"
     password_min_length = 9
     password_exclude_username = true
     password_dictionary_lookup = true
     password_history_count = 5
     password_max_lockout_attempts = 11
-  
+    groups_included = ["${data.okta_group.everyone}"] 
 }

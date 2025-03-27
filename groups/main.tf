@@ -23,5 +23,9 @@ data "okta_user" "olivia" {
   }
 }
 
+data "okta_group" "everyone" {
+  name = "Everyone"
+}
+
 
 
