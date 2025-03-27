@@ -21,5 +21,6 @@ resource "okta_policy_password" "ad_pw" {
 
 resource "okta_policy_rule_password" "ad_pw_policy_rule" {
     name = "Active Directory Policy Rule"
+    policy_id = "${okta_policy.password.ad_pw.id}"
   
 }
