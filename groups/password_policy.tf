@@ -8,7 +8,6 @@ resource "okta_policy_password_default" "default_pw" {
 
 resource "okta_policy_password" "ad_pw" {
     name = "Active Directory Policy"
-    status = "ACTIVE"
     auth_provider = "ACTIVE_DIRECTORY"
     password_min_length = 9
     password_exclude_username = true
