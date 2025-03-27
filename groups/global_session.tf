@@ -8,6 +8,7 @@ resource "okta_policy_signon" "passless_global_signon_policy" {
 
 resource "okta_policy_rule_signon" "passless_global_signon_rule" {
     name = "Global Session Policy Rule"
+    policy_id = okta_policy_signon.passless_global_signon_policy.id
     primary_factor = "PASSWORD_IDP_ANY_FACTOR"
     access = "ALLOW"
     status = "ACTIVE"

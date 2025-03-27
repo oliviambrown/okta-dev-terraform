@@ -8,7 +8,7 @@ resource "okta_policy_password_default" "default_pw" {
 
 resource "okta_policy_rule_password" "default_pw_policy_rule" {
     name = "Default Policy Rule"
-    policy_id = "${okta_policy_password_default.default_pw.id}"
+    policy_id = okta_policy_password_default.default_pw.id
     status = "INACTIVE"
   
 }
@@ -23,11 +23,11 @@ resource "okta_policy_password" "ad_pw" {
     password_dictionary_lookup = true
     password_history_count = 5
     password_max_lockout_attempts = 11
-    groups_included = ["${data.okta_group.everyone.id}"] 
+    groups_included = [data.okta_group.everyone.id] 
 }
 
 resource "okta_policy_rule_password" "ad_pw_policy_rule" {
     name = "Active Directory Policy Rule"
-    policy_id = "${okta_policy_password.ad_pw.id}"
+    policy_id = okta_policy_password.ad_pw.id
   
 }
