@@ -4,8 +4,8 @@ resource "okta_group" "passless_group" {
   
 }
 
-resource "okta_policy_signon" "passless_auth" {
-    name = "Sign On Policy"
+resource "okta_app_signon_policy" "passless_auth_policy" {
+    name = "Passwordless Auth Policy"
     description = "${var.terraform-warning}"
   
 }
