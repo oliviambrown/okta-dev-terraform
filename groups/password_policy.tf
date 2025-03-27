@@ -15,5 +15,5 @@ resource "okta_policy_password" "ad_pw" {
     password_dictionary_lookup = true
     password_history_count = 5
     password_max_lockout_attempts = 11
-    groups_included = ["${data.okta_group.everyone}"] 
+    groups_included = ["${data.okta_group.everyone.id}"] 
 }
