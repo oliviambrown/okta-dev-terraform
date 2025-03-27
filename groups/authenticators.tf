@@ -9,6 +9,12 @@ resource "okta_authenticator" "email" {
   name = "Email"
   key = "okta_email"
   status = "ACTIVE"
+
+  settings = jsonencode(
+    {
+      "allowedFor": "any"
+    }
+  )
 }
 
 resource "okta_authenticator" "google" {

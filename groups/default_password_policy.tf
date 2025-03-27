@@ -6,6 +6,13 @@ resource "okta_policy_password_default" "default_pw" {
     password_max_lockout_attempts = 11
 }
 
+resource "okta_policy_rule_password" "default_pw_policy_rule" {
+    name = "Default Policy Rule"
+    policy_id = "${okta_policy_password_default.default_pw.id}"
+    status = "INACTIVE"
+  
+}
+
 resource "okta_policy_password" "ad_pw" {
     name = "TF-managed Active Directory Policy"
     description = "${var.terraform-warning}"
