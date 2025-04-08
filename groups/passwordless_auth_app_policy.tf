@@ -22,9 +22,9 @@ resource "okta_app_signon_policy_rule" "passless_auth_policy" {
 resource "okta_group_memberships" "passless_members" {
     group_id = okta_group.passless_group.id
     users = [
-        okta_user.connie.id,
-        okta_user.jean.id,
-        okta_user.sasha.id
+        data.okta_user.connie.id,
+        data.okta_user.jean.id,
+        data.okta_user.sasha.id
     ]
   
 }
