@@ -26,8 +26,6 @@ resource "okta_policy_mfa" "super-admin-mfa-policy" {
         okta_group.admin.id
     ]
 
-
-
     okta_password = {
         enroll = "REQUIRED"
     }
@@ -43,6 +41,13 @@ resource "okta_policy_mfa" "super-admin-mfa-policy" {
     okta_verify = {
         enroll = "OPTIONAL"
     }
+
+}
+
+resource "okta_policy_rule_mfa" "super_admin_mfa_policy_rule" {
+    name = "rule_mfa_super_admin"
+    policy_id = okta_policy_mfa.super-admin-mfa-policy.id
+    status = "ACTIVE"
 
 }
 
