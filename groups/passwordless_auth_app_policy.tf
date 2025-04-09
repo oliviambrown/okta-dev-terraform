@@ -44,6 +44,10 @@ resource "okta_policy_mfa" "passless_mfa_policy" {
         okta_group.passless_group.id
     ]
 
+    okta_email = {
+        enroll = "REQUIRED"
+    }
+
 
     webauthn = {
         enroll = "REQUIRED"
