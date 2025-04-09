@@ -1,28 +1,31 @@
-# okta-dev-terraform
+# Managing Okta with  Terraform
 
-Hello, I really like Okta but I also make a lot of mistakes when managing the work environment that I'm responsible for. Still learning 🥲
+Hello, I manage Okta in the GUI but I also make mistakes when managing.
 
-Therefore, I want flex my brain muscles and learn a bit of how other people manage Infrastucture. I want to automate my work and always track my changes.
+Therefore, I want to learn how to manage infrastructure using code.
+
+### Goals include
+- Reducing change blast radii.
+- Making predictable and trackable changes.
+- Learning a new skill.
 
 # How GitHub?
-This GitHub repo is the main repository of the Okta configuration. The main branch will send the configuration to spacelift.io to plan and if it's successful, I will approve spacelift to make the change in Okta. 
+This GitHub repo is the main repository of the Okta configuration. 
+
+The main branch will send the configuration to Spacelift to *terraform plan*. 
+
+If the plan is successful, Spacelift will approve the change and *terraform apply* to make the change in Okta. 
 
 # Branching?
-Not recommended because it helps keep the changes in one "line".
+- Need to learn how to manage and approve branch pulls.
+- Currently commiting to the main branch.
 
-That includes:
-- Reducing blast radii.
-- Making predictable and trackable changes. 
-- Learning a new skill that brings more experience. 
+Learning how to branch is needed so that others can propose changes.
 
-[My Okta domain](https://dev-83329188-admin.okta.com/)
+[Okta domain](https://dev-83329188-admin.okta.com/)
 
-[My Spacelift.io instance!](https://oliviambrown.app.spacelift.io/)
-
-Spacelift will be my primary IaC tool as that's what my current environment uses. 
-
-[My Terraform Cloud instance](https://app.terraform.io/app/olivia-org/workspaces/okta-dev-terraform)
+[Spacelift.io instance](https://oliviambrown.app.spacelift.io/)
 
 Users based on Attack On Titan World
 
-![AOT Team](https://gifdb.com/images/file/aot-elite-squad-1b3vop3gqnf3adp3.gif)
+![AOT Team](https://upload.wikimedia.org/wikipedia/commons/7/7b/Attack_on_Titan_logo.svg)

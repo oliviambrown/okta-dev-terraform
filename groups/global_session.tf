@@ -1,9 +1,9 @@
 resource "okta_policy_signon" "passless_global_signon_policy" {
     name = "Passwordless Global Session Policy"
-    priority = 1
+    priority = 2
     groups_included = [okta_group.passless_group.id]
     status = "ACTIVE"
-  
+
 }
 
 resource "okta_policy_rule_signon" "passless_global_signon_rule" {
@@ -12,5 +12,5 @@ resource "okta_policy_rule_signon" "passless_global_signon_rule" {
     primary_factor = "PASSWORD_IDP_ANY_FACTOR"
     access = "ALLOW"
     status = "ACTIVE"
-  
+
 }
