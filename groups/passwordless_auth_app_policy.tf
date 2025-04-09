@@ -45,7 +45,7 @@ resource "okta_policy_mfa" "passless_mfa_policy" {
     ]
 
     okta_password = {
-        enroll = "NOT_ALLOWED"
+        enroll = "OPTIONAL"
     }
 
     webauthn = {
