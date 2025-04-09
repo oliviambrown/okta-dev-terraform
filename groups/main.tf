@@ -27,5 +27,25 @@ data "okta_group" "everyone" {
   name = "Everyone"
 }
 
+data "okta_user" "jean" {
+    search {
+        name = "profile.firstName"
+        value = "Jean"
+    }
 
+}
 
+data "okta_user" "connie" {
+    search {
+        name = "profile.firstName"
+        value = "Connie"
+    }
+
+}
+
+data "okta_user" "sasha" {
+    search {
+        name = "profile.firstName"
+        value = "Sasha"
+    }
+}
