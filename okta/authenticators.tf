@@ -27,7 +27,7 @@ resource "okta_authenticator" "verify" {
     key = "okta_verify"
     name = "Okta Verify"
     status = "ACTIVE"
-  
+  ### Enabling Push and FastPass can only happen in the console.
 }
 
 resource "okta_authenticator" "password" {
