@@ -20,8 +20,8 @@ resource "okta_app_signon_policy_rule" "console_policy_rule" {
     groups_included = [okta_group.admin.id]
     constraints = [
         jsonencode({
-            "possession" : {
-                "deviceBound" : "REQUIRED"
+            possession =  {
+                deviceBound = "REQUIRED"
             }
         })
     ]
