@@ -15,8 +15,14 @@ resource "okta_app_oauth" "spacelift" {
 }
 
 resource "okta_app_bookmark" "spacelift-tile" {
-    label = "Spacelift!!"
+     label = "Spacelift!"
     url   = "https://oliviamariebrown.app.spacelift.io/"
+}
+
+resource "okta_app_user" "spacelift-tile-olivia" {
+    app_id  = okta_app_bookmark.spacelift-tile.id
+    user_id = data.okta_user.olivia.id
+    username = data.okta_user.olivia.login
 }
 
 

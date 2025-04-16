@@ -34,7 +34,7 @@ resource "okta_app_signon_policy_rule" "passless_auth_policy" {
 
 ### Authenticator enrollment policy
 ### Enables which factors are enrollable by a user
-### Works in conjunction with authentcation policy and authenticators. They both have to correct expose each other.
+### Works in conjunction with authentcation policy and authenticators. They both have to correctly expose each other.
 resource "okta_policy_mfa" "passless_mfa_policy" {
     name = "policy_mfa_passless"
     status = "ACTIVE"
