@@ -15,7 +15,7 @@ resource "okta_app_oauth" "spacelift" {
 }
 
 resource "okta_app_bookmark" "spacelift-tile" {
-    label = "Spacelift!"
+    label = "Spacelift!!"
     url   = "https://oliviamariebrown.app.spacelift.io/"
 }
 
