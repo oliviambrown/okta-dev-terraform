@@ -18,4 +18,15 @@ resource "okta_app_signon_policy_rule" "console_policy_rule" {
     access = "ALLOW"
     factor_mode = "2FA"
     groups_included = [okta_group.admin.id]
+
+    constraints = [
+        jsonencode(
+            {
+                possession = {
+                    deviceBound = "REQUIRED"
+                    hardwareProtection = "REQUIRED"
+                }
+            }
+        )
+    ]
 }
