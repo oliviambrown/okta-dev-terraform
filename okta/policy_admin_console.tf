@@ -21,8 +21,8 @@ resource "okta_app_signon_policy_rule" "console_policy_rule" {
     constraints = [
         jsonencode({
             "posession" : {
-                "deviceBound" : "REQUIRED"
-                "hardwareProtection" : "REQUIRED"
+                "deviceBound" : "REQUIRED",
+                "hardwareProtection" : "REQUIRED",
                 "phishingResistant" : "REQUIRED"
             }
         })
