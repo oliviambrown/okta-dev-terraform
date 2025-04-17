@@ -9,7 +9,7 @@ resource "okta_app_signon_policy_rule" "test" {
     factor_mode = "2FA"
     constraints = [
         jsonencode({
-            deviceBound = "REQUIRED"
+            hardwareProtection = "REQUIRED"
         })
     ]
 
