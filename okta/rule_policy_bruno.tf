@@ -14,7 +14,7 @@ resource "okta_app_signon_policy_rule" "bruno-tf" {
     type = "ASSURANCE"
 
     # appSignOn.verificationMethod.type.constraints
-    constraints = [
+  /*  constraints = [
         jsonencode({
             "possession" = {
                 "hardwareProtection" = "REQUIRED",
@@ -22,7 +22,7 @@ resource "okta_app_signon_policy_rule" "bruno-tf" {
                 "phishingResistant" = "REQUIRED"
             }
         })
-    ]
+    ]*/
 }
 
 data "okta_policy" "bruno_policy" {
