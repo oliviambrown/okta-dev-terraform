@@ -16,9 +16,9 @@ resource "okta_app_signon_policy_rule" "bruno-tf" {
     # appSignOn.verificationMethod.type.constraints
     constraints = [
         jsonencode({
-            "knowledge" : {
-                "reauthenticateIn" : "PT2H",
-                "types" : ["password"]
+            "knowledge" = {
+                "reauthenticateIn" = "PT2H",
+                "types" = ["password"]
             }
         })
     ]
