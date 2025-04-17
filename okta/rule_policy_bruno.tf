@@ -16,11 +16,6 @@ resource "okta_app_signon_policy_rule" "bruno-tf" {
     # appSignOn.verificationMethod.type.constraints
     constraints = [
         jsonencode({
-            "possession" : {
-                "deviceBound" : "REQUIRED",
-                "hardwareProtection" : "REQUIRED"
-                "phishingResistant" : "REQUIRED"
-            },
             "knowledge" : {
                 "reauthenticateIn" : "PT2H",
                 "types" : ["password"]
