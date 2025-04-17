@@ -21,7 +21,14 @@ resource "okta_app_signon_policy_rule" "bruno-tf" {
                 "hardwareProtection" : "REQUIRED"
                 "phishingResistant": "REQUIRED"
             }
-        })
+        },
+            {
+                "knowledge" : {
+                    "reauthenticateIn" : "PT2H",
+                    "types" : ["password"]
+                }
+            },
+        )
     ]
 }
 
