@@ -8,11 +8,11 @@ resource "okta_app_signon_policy_rule" "test" {
     name      = "testAcc_replace_with_uuid"
     factor_mode = "2FA"
     constraints = [
-        jsonencode({
+        {
             "possession" : {
                 "deviceBound" : "REQUIRED"
             }
-        })
+        }
     ]
 
 }
